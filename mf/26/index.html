@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MakeFest</title><link rel="stylesheet" href="/_astro/common-Zxqc2P.css" type="text/css"><link rel="icon" type="image/png" href="/bMbF-favicon-32x32.png"><link rel="apple-touch-icon" sizes="96x96" href="/mf-icon-96x96.png"><script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="69hBhB4ou" async=""></script></head><body class="dark:bg-gray-darkest font-inter"><script type="text/javascript">
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MakeFest</title><link rel="stylesheet" href="/_astro/common-2mlmwi.css" type="text/css"><link rel="icon" type="image/png" href="/bMbF-favicon-32x32.png"><link rel="apple-touch-icon" sizes="96x96" href="/mf-icon-96x96.png"><script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="69hBhB4ou" async=""></script></head><body class="dark:bg-gray-darkest font-inter"><script type="text/javascript">
         (function(window, document, dataLayerName, id) {
         window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
         function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
@@ -17,10 +17,10 @@
 <li>Erforderliche Vorkenntnisse: keine</li>
 </ul>
 <h2 id="was-wir-in-diesem-kurs-machen">Was wir in diesem Kurs machen:</h2>
-<p>In diesem Kurs lernt jeder Teilnehmer wichtige Grundlagen der Spieleentwicklung kennen:</p>
+<p>Jeder Teilnehmer lernt wichtige Grundlagen der Spieleentwicklung kennen:</p>
 <ul>
-<li>wie man einen Computer für Entwicklungsarbeit einrichtet</li>
-<li>wie man mit den anderen Teilnehmern trotz Distanz gut zusammenarbeitet</li>
+<li>wie man einen Computer für Entwicklungsarbeit einrichtet und benutzt</li>
+<li>wie man mit den anderen Teilnehmern über Distanz gut zusammenarbeitet</li>
 <li>wie man die Game-Engine Unity benutzt</li>
 <li>erste Schritte in der Programmierung von Spielen in C#</li>
 <li>andere Programme und Dienste für die Spieleentwicklung nach Verabredung mit den Teilnehmern</li>
@@ -47,65 +47,4 @@
 <h2 id="fragen--anmeldungen">Fragen &amp; Anmeldungen</h2>
 <ul>
 <li>E-Mail an <a href="mailto:mvk@simhub.com">mvk@simhub.com</a></li>
-</ul><div class="w-full"><div id="unity-container" class="unity-desktop"><canvas id="unity-canvas" style="width: 100%;"></canvas><div id="unity-loading-bar"><div id="unity-logo"></div><div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div></div><div id="unity-mobile-warning"></div><div id="unity-footer"><div id="unity-webgl-logo"></div><button class="dark:bg-gray-darker dark:hover:bg-gray-med-dark dark:active:bg-gray-light dark:text-gray-lighter dark:hover:text-gray-lightest dark:active:text-gray-darker px-2 rounded-lg" id="unity-fullscreen-button">fullscreen</button></div></div></div><script folder="mf26">
-    var folder = document.currentScript.getAttribute('folder');
-    var filePartial = document.currentScript.getAttribute('filePartial');
-    console.log('folder: ' + folder);
-    var buildUrl = "/games/" + folder + "/Build";
-
-    var loaderUrl = buildUrl + "/" + filePartial + ".loader.js";
-    var config = {
-        dataUrl: buildUrl + "/" + filePartial + ".data",
-        frameworkUrl: buildUrl + "/" + filePartial + ".framework.js",
-        codeUrl: buildUrl + "/" + filePartial + ".wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "SimHub",
-        productName: "MF",
-        productVersion: "0.1",
-    };
-
-    var container = document.querySelector("#unity-container");
-    var canvas = document.querySelector("#unity-canvas");
-    var loadingBar = document.querySelector("#unity-loading-bar");
-    var progressBarFull = document.querySelector("#unity-progress-bar-full");
-    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-    var mobileWarning = document.querySelector("#unity-mobile-warning");
-
-    // By default Unity keeps WebGL canvas render target size matched with
-    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-    // Set this to false if you want to decouple this synchronization from
-    // happening inside the engine, and you would instead like to size up
-    // the canvas DOM size and WebGL render target sizes yourself.
-    // config.matchWebGLToCanvasSize = false;
-
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-        mobileWarning.style.display = "none";
-        }, 5000);
-    } else {
-        //canvas.style.width = "960px";
-        //canvas.style.height = "600px";
-    }
-    loadingBar.style.display = "block";
-
-    var script = document.createElement("script");
-    script.src = loaderUrl;
-    script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-        progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-        loadingBar.style.display = "none";
-        fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-        };
-        }).catch((message) => {
-        alert(message);
-        });
-    };
-    document.body.appendChild(script);
-</script></div></div></div><div class="text-gray-med-darker flex flex-row gap-5 justify-center p-10 flex-wrap"><a href="/contact" class="dark:hover:text-gray-500 dark:active:text-gray-200">Kontakt &amp; Impressum</a><a href="/terms" class="dark:hover:text-gray-500 dark:active:text-gray-200">Nutzungsbedingungen</a><a href="/privacy" class="dark:hover:text-gray-500 dark:active:text-gray-200">Datenschutzrichtlinie</a></div></body></html>
+</ul></div></div></div><div class="text-gray-med-darker flex flex-row gap-5 justify-center p-10 flex-wrap"><a href="/contact" class="dark:hover:text-gray-500 dark:active:text-gray-200">Kontakt &amp; Impressum</a><a href="/terms" class="dark:hover:text-gray-500 dark:active:text-gray-200">Nutzungsbedingungen</a><a href="/privacy" class="dark:hover:text-gray-500 dark:active:text-gray-200">Datenschutzrichtlinie</a></div></body></html>
